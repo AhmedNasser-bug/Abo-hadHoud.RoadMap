@@ -1,0 +1,4 @@
+﻿  Rock-Paper_Scisors.cpp
+C:\Users\orginal\source\repos\Rock-Paper_Scisors\Rock-Paper_Scisors\Rock-Paper_Scisors.cpp(50,1): warning C4715: 'ReadChoice': not all control paths return a value
+C:\Users\orginal\source\repos\Rock-Paper_Scisors\Rock-Paper_Scisors\Rock-Paper_Scisors.cpp(30,1): warning C4715: 'PcChoice': not all control paths return a value
+  Rock-Paper_Scisors.vcxproj -> C:\Users\orginal\source\repos\Rock-Paper_Scisors\x64\Debug\Rock-Paper_Scisors.exe
