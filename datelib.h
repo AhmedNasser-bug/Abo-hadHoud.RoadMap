@@ -361,4 +361,147 @@ namespace DateLib{
         date.Year += 1000;
         return date;
     }
+    sDate DecreaseOneDay(sDate date) {
+        if (date.Day == 1 AND date.Month == 1) {
+            date.Day = 31;
+            date.Month = 12;
+            date.Year -= 1;
+            return date;
+        }
+        if (date.Day == 1) {
+            date.Month -= 1;
+            date.Day = numberOfDaysInMonth(date.Month, date.Year);
+            return date;
+        }
+        date.Day -= 1; // iff day and month are in the middle
+        return date;
+    }
+    sDate DecreaseXDays(sDate date , int x){
+        while (x > 0) {
+            date = DecreaseOneDay(date);
+            x -= 1
+        }
+        return date;
+    }
+    sDate DecreaseOneWeek(sDate date) {
+        short i = 0;
+        while (i < 7) {
+            date = DecreaseOneDay(date);
+        }
+        return date;
+    }
+    sDate DecreaseXWeeks(sDate date) {
+        for (int i = 0; i < x; i++) {
+            date = DecreaseOneWeek(date);
+        }
+        return date;
+    }
+    sDate DecreaseOneMonth(sDate date) {
+        bool lastDay = CheckLastDay(date);
+        date.Month -= 1;
+        if (date.Month <= 0) {
+            date.Month = 12;
+            date.Year -= 1;
+        }
+        if (lastDay) {
+            date.Day = numberOfDaysInMonth(date.Month);
+        }
+    }
+    sDate DecreaseXMonths(sDate date , int x) {
+        for (int i = 0; i < x; i++) {
+            date = DecreaseOneMonth(date);
+        }
+        return date;
+    }
+    sDate DecreaseOneYear(sDate date) {
+        date.Year -= 1;
+        if (date.Month == 2 && CheckLastDay(date))) {
+            if (isLeapYear(date.Year)) {
+                date.Day = 29;
+            }
+            else {
+                date.Day = 28;
+            }
+        }
+        return date;
+    }
+    sDate DecreaseXYears(sDate date, int x) {
+        while (x) {
+            date = DecreaseOneYear(date);
+            x -= 1;
+        }
+        return date;
+    }
+    sDate DecreaseOneDecade(sDate date){
+        date.Year -= 10;
+        if (date.Month == 2 And CheckLastDay(date))) {
+            if (isLeapYear(date.Year)) {
+                date.Day = 29;
+            }
+            else {
+                date.Day = 28;
+            }
+        }
+        return date;
+    }
+    sDate DecreaseXDecades(sDate date, int x) {
+        date.Year -= 10*x;
+        if (date.Month == 2 And CheckLastDay(date))) {
+            if (isLeapYear(date.Year)) {
+                date.Day = 29;
+            }
+            else {
+                date.Day = 28;
+            }
+        }
+        return date;
+    }
+    sDate DecreaseOneCentury(sDate date) {
+        date.Year -= 100;
+        if (date.Month == 2 And CheckLastDay(date))) {
+            if (isLeapYear(date.Year)) {
+                date.Day = 29;
+            }
+            else {
+                date.Day = 28;
+            }
+        }
+        return date;
+    }
+    sDate DecreaseXCenturies(sDate date , int x) {
+        date.Year -= 100 * x;
+        if (date.Month == 2 And CheckLastDay(date))) {
+            if (isLeapYear(date.Year)) {
+                date.Day = 29;
+            }
+            else {
+                date.Day = 28;
+            }
+        }
+        return date;
+    }
+    sDate DecreaseOneMillenium(sDate date) {
+        date.Year -= 1000;
+        if (date.Month == 2 And CheckLastDay(date))) {
+            if (isLeapYear(date.Year)) {
+                date.Day = 29;
+            }
+            else {
+                date.Day = 28;
+            }
+        }
+        return date;
+    }
+    sDate DecreaseXMilleniums(sDate date , int x) {
+        date.Year -= 1000*x;
+        if (date.Month == 2 And CheckLastDay(date))) {
+            if (isLeapYear(date.Year)) {
+                date.Day = 29;
+            }
+            else {
+                date.Day = 28;
+            }
+        }
+        return date;
+    }
 }
