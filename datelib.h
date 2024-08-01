@@ -46,11 +46,11 @@ namespace DateLib{
     }
 
 
-    short calculateDayIndex(short day, short month, short year) {
-        short a = (14 - month) / 12;
-        short y = year - a;
-        short m = month + (12 * a) - 2;
-        return (day + y + (y / 4) - (y / 100) + (y / 400) + ((31 * m) / 12)) % 7;
+    short calculateDayIndex(sDate date) {
+        short a = (14 - date.Month) / 12;
+        short y = date.Year - a;
+        short m = date.Month + (12 * a) - 2;
+        return (date.Day + y + (y / 4) - (y / 100) + (y / 400) + ((31 * m) / 12)) % 7;
     }
 
 
@@ -171,6 +171,19 @@ namespace DateLib{
         }
         return days;
     }
+    short DaysUntilWeekend(sDate date) {
+        short potential = 6 - calculateDayIndex(date);
+        if (potential == 6) {
+            return 6;
+        }
+        return potential;
+    }
+    short DaysUntilEndOfMonth(sDate date) {
+        return numberOfDaysInMonth(date.Month, date.Year) - date.Day;
+    }
+    short DaysUntilEndOfYear(sDate date) {
+        return ((isLeapYear(date.Year) ? 366 : 365) - daysFomBeggin(date));
+    }
     bool Date1BeforeDate2(sDate date1, sDate date2) {
         return daysFomBeggin(date1.Day, date1.Month, date1.Year) + date1.Year < daysFomBeggin(date2.Day, date2.Month, date2.Year) + date2.Year;
     }
@@ -190,6 +203,16 @@ namespace DateLib{
     }
     bool CheckLastDay(sDate date) {
         return date.Day == numberOfDaysInMonth(date.Month, date.Year);
+    }
+    bool isEndOfWeek(sDate date) {
+        return calculateDayIndex(date) == 6;
+    }
+    bool isWeekEnd(sDate date) {
+        return calculateDayIndex(date) == 0 or calculateDayIndex(date) == 6;
+    }
+    bool isBusinessDay(sDate date) {
+        short ind = calculateDayIndex(date);
+        return ind > 0 and ind < 6;
     }
 
 
@@ -503,5 +526,24 @@ namespace DateLib{
             }
         }
         return date;
+    }
+    int vacationDays(sDate start, sDate End) {
+        int days = 0;
+        while (start.Day != End.Day or start.Year != End.Year or End.Month != start.Month) {
+            start = addOneday(start);
+            if (not isWeekEnd(start)) {
+                days++;
+            }
+        }
+        return days;
+    }
+    sDate vacationReturnDate(sDate start , int Days) {
+        while (Days) {
+            if (not isWeekEnd(start)) {
+                Days--;
+            }
+            start = addOneday(start);     
+        }
+        return start;
     }
 }
