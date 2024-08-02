@@ -7,8 +7,8 @@ namespace DateLib{
 #define And &&
 
     struct sDate { short Year; short Month; short Day; };
-
-
+    struct sPeriod { sDate start; sDate end; };
+    enum DateIs { Before: -1 , After : 1 , Equal : 0 };
     bool isLeapYear(short Year) {
         return (Year % 4 == 0 && Year % 100 != 0) || (Year % 400 == 0);
     }
@@ -67,6 +67,16 @@ namespace DateLib{
         ans.Month = GetMonth();
         ans.Year = GetYear();
         return ans;
+    }
+    sPeriod ReadPeriod() {
+        cout << "Enter Start Of Period\n";
+        sDate start = CreateDate();
+        cout << "Enter End Of Period\n";
+        sDate End = CreateDate();
+        sPeriod period;
+        period.end = End;
+        period.start = start;
+        return period;
     }
     /*sDate GetSystemDate() {
         sDate cur;
@@ -187,9 +197,34 @@ namespace DateLib{
     bool Date1BeforeDate2(sDate date1, sDate date2) {
         return daysFomBeggin(date1.Day, date1.Month, date1.Year) + date1.Year < daysFomBeggin(date2.Day, date2.Month, date2.Year) + date2.Year;
     }
+    bool Date1AfterDate2(sDate date1, sDate date2) {
+        return daysFomBeggin(date1.Day, date1.Month, date1.Year) + date1.Year > daysFomBeggin(date2.Day, date2.Month, date2.Year) + date2.Year;
+    }
     bool Date1isEqualtoDate2(sDate date1, sDate date2) {
         return daysFomBeggin(date1.Day, date1.Month, date1.Year) + date1.Year == daysFomBeggin(date2.Day, date2.Month, date2.Year) + date2.Year;
     }
+    bool CompareDates(sDate date1, sDate date2) {
+        /*
+        returns -1 if date1 is before date2
+        returns 1 if date1 is after date2;
+        returns 0 if they're equal
+        */
+        if (Date1BeforeDate2(date1, date2)) {
+            return -1;
+        }
+        if (Date1AfterDate2(date1, date2)) {
+            return 1;
+        }
+        return 0
+    }
+    bool OverlappingPeriodsSlow(sDate strt1, sDate strt2, sDate end1, sDate end2) {
+        return (CompareDates(strt1, strt2) == -1) ? ((Date1BeforeDate2(strt2, end1) or CompareDates(strt2, end1) == 0) ? 1 : (CompareDates(strt1, strt2) == 0)) : ((Date1BeforeDate2(strt1, end2) or CompareDates(strt1 , end2) == 0) ? 1 : (CompareDates(strt1, strt2) == 0));
+    }
+    bool OverLappingPeriods(sPeriod period1, sPeriod period2) {
+        return (CompareDates(period1.end, period2.start) == DateIs::Before or CompareDates(period1.start, period2.end) == DateIs::After) 
+
+
+        }
     void CopyDateFromTo(sDate& date1, sDate& date2) {
         date2 = CreateDate(date1.Day, date1.Month, date1.Year);
     }
