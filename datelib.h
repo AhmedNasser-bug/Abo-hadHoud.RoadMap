@@ -8,7 +8,7 @@ namespace DateLib{
 
     struct sDate { short Year; short Month; short Day; };
     struct sPeriod { sDate start; sDate end; };
-    enum DateIs { Before: -1 , After : 1 , Equal : 0 };
+    enum DateIs { Before = -1, After = 1, Equal = 0 };
     bool isLeapYear(short Year) {
         return (Year % 4 == 0 && Year % 100 != 0) || (Year % 400 == 0);
     }
@@ -52,6 +52,12 @@ namespace DateLib{
         short m = date.Month + (12 * a) - 2;
         return (date.Day + y + (y / 4) - (y / 100) + (y / 400) + ((31 * m) / 12)) % 7;
     }
+    short calculateDayIndex(short day , short Month , short Year) {
+        short a = (14 - Month) / 12;
+        short y = Year - a;
+        short m = Month + (12 * a) - 2;
+        return (day + y + (y / 4) - (y / 100) + (y / 400) + ((31 * m) / 12)) % 7;
+    }
 
 
     sDate CreateDate(short day, short month, short year) {
@@ -91,7 +97,7 @@ namespace DateLib{
 
 
     void printDate(sDate date) {
-        short DayOrder = calculateDayIndex(date.Day, date.Month, date.Year);
+        short DayOrder = calculateDayIndex(date);
         printf("Date: %d/%d/%d \n", date.Year, date.Month, date.Day);
         printf("day Order:  %d\n", DayOrder);
         string Days[] = { "sunday" , "monday" , "tuesday" , "wednesday" , "thursday" , "friday" , "saturday" };
@@ -148,6 +154,7 @@ namespace DateLib{
     }
 
 
+
     sDate daysToDate(short days, short year) {
         short arrdays[] = { 31 , 28, 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 };
         if (isLeapYear(year))arrdays[1]++;
@@ -164,7 +171,6 @@ namespace DateLib{
         ret.Year = year;
         return ret;
     }
-
     int DaysDiff(sDate date1, sDate date2) {
         int days = 0;
         short less = min(date1.Year, date2.Year);
@@ -215,22 +221,26 @@ namespace DateLib{
         if (Date1AfterDate2(date1, date2)) {
             return 1;
         }
-        return 0
+        return 0;
     }
     bool OverlappingPeriodsSlow(sDate strt1, sDate strt2, sDate end1, sDate end2) {
         return (CompareDates(strt1, strt2) == -1) ? ((Date1BeforeDate2(strt2, end1) or CompareDates(strt2, end1) == 0) ? 1 : (CompareDates(strt1, strt2) == 0)) : ((Date1BeforeDate2(strt1, end2) or CompareDates(strt1 , end2) == 0) ? 1 : (CompareDates(strt1, strt2) == 0));
     }
     bool OverLappingPeriods(sPeriod period1, sPeriod period2) {
-        return (CompareDates(period1.end, period2.start) == DateIs::Before or CompareDates(period1.start, period2.end) == DateIs::After) 
-
-
-        }
+        return (CompareDates(period1.end, period2.start) == DateIs::Before or CompareDates(period1.start, period2.end) == DateIs::After);
+    }
     void CopyDateFromTo(sDate& date1, sDate& date2) {
         date2 = CreateDate(date1.Day, date1.Month, date1.Year);
     }
    /* int daysfromBirthDay(sDate birthdate) {
         return DaysDiff(birthdate, GetSystemDate());
     }*/
+    bool DateWithinPeriod(sDate date, sPeriod period) {
+        return  not (Date1AfterDate2(date, period.end) or Date1BeforeDate2(date, period.start));
+    }
+    int DaysSimilar(sPeriod p1, sPeriod p2) {
+        return (DateWithinPeriod(p1.start, p2)) ? DaysDiff(p1.start, p2.end) : DaysDiff(p2.start, p1.end);
+    }
 
 
     bool CheckLastMonth(sDate date) {
@@ -250,7 +260,9 @@ namespace DateLib{
         return ind > 0 and ind < 6;
     }
 
-
+    int GetPeriodLength(sPeriod period) {
+        return DaysDiff(period.start, period.end);
+    }
     sDate dateAfterAdding(short Days, sDate Date) {// fix this
 
         short arrdays[] = { 31 , 28, 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 };
@@ -420,7 +432,7 @@ namespace DateLib{
         return date;
     }
     sDate DecreaseOneDay(sDate date) {
-        if (date.Day == 1 AND date.Month == 1) {
+        if (date.Day == 1 and date.Month == 1) {
             date.Day = 31;
             date.Month = 12;
             date.Year -= 1;
@@ -437,7 +449,7 @@ namespace DateLib{
     sDate DecreaseXDays(sDate date , int x){
         while (x > 0) {
             date = DecreaseOneDay(date);
-            x -= 1
+            x -= 1;
         }
         return date;
     }
@@ -448,7 +460,7 @@ namespace DateLib{
         }
         return date;
     }
-    sDate DecreaseXWeeks(sDate date) {
+    sDate DecreaseXWeeks(sDate date , int x) {
         for (int i = 0; i < x; i++) {
             date = DecreaseOneWeek(date);
         }
@@ -462,7 +474,7 @@ namespace DateLib{
             date.Year -= 1;
         }
         if (lastDay) {
-            date.Day = numberOfDaysInMonth(date.Month);
+            date.Day = numberOfDaysInMonth(date.Month , date.Year);
         }
     }
     sDate DecreaseXMonths(sDate date , int x) {
@@ -473,7 +485,7 @@ namespace DateLib{
     }
     sDate DecreaseOneYear(sDate date) {
         date.Year -= 1;
-        if (date.Month == 2 && CheckLastDay(date))) {
+        if (date.Month == 2 && CheckLastDay(date)) {
             if (isLeapYear(date.Year)) {
                 date.Day = 29;
             }
@@ -492,7 +504,7 @@ namespace DateLib{
     }
     sDate DecreaseOneDecade(sDate date){
         date.Year -= 10;
-        if (date.Month == 2 And CheckLastDay(date))) {
+        if (date.Month == 2 And CheckLastDay(date)) {
             if (isLeapYear(date.Year)) {
                 date.Day = 29;
             }
@@ -504,7 +516,7 @@ namespace DateLib{
     }
     sDate DecreaseXDecades(sDate date, int x) {
         date.Year -= 10*x;
-        if (date.Month == 2 And CheckLastDay(date))) {
+        if (date.Month == 2 And CheckLastDay(date)) {
             if (isLeapYear(date.Year)) {
                 date.Day = 29;
             }
@@ -516,7 +528,7 @@ namespace DateLib{
     }
     sDate DecreaseOneCentury(sDate date) {
         date.Year -= 100;
-        if (date.Month == 2 And CheckLastDay(date))) {
+        if (date.Month == 2 And CheckLastDay(date)) {
             if (isLeapYear(date.Year)) {
                 date.Day = 29;
             }
@@ -528,7 +540,7 @@ namespace DateLib{
     }
     sDate DecreaseXCenturies(sDate date , int x) {
         date.Year -= 100 * x;
-        if (date.Month == 2 And CheckLastDay(date))) {
+        if (date.Month == 2 And CheckLastDay(date)) {
             if (isLeapYear(date.Year)) {
                 date.Day = 29;
             }
@@ -540,7 +552,7 @@ namespace DateLib{
     }
     sDate DecreaseOneMillenium(sDate date) {
         date.Year -= 1000;
-        if (date.Month == 2 And CheckLastDay(date))) {
+        if (date.Month == 2 And CheckLastDay(date)) {
             if (isLeapYear(date.Year)) {
                 date.Day = 29;
             }
@@ -552,7 +564,7 @@ namespace DateLib{
     }
     sDate DecreaseXMilleniums(sDate date , int x) {
         date.Year -= 1000*x;
-        if (date.Month == 2 And CheckLastDay(date))) {
+        if (date.Month == 2 And CheckLastDay(date)) {
             if (isLeapYear(date.Year)) {
                 date.Day = 29;
             }
@@ -565,7 +577,7 @@ namespace DateLib{
     int vacationDays(sDate start, sDate End) {
         int days = 0;
         while (start.Day != End.Day or start.Year != End.Year or End.Month != start.Month) {
-            start = addOneday(start);
+            addOneday(start);
             if (not isWeekEnd(start)) {
                 days++;
             }
@@ -577,7 +589,7 @@ namespace DateLib{
             if (not isWeekEnd(start)) {
                 Days--;
             }
-            start = addOneday(start);     
+            addOneday(start);     
         }
         return start;
     }
