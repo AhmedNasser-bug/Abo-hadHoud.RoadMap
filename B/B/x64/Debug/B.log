@@ -1,0 +1,31 @@
+﻿  B.cpp
+C:\Users\orginal\source\repos\Header1.h(26,30): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'B.cpp')
+  
+C:\Users\orginal\source\repos\Header1.h(41,20): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'B.cpp')
+  
+C:\Users\orginal\source\repos\Header1.h(81,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'B.cpp')
+  
+C:\Users\orginal\source\repos\Header1.h(82,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'B.cpp')
+  
+C:\Users\orginal\source\repos\Header1.h(659,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'B.cpp')
+  
+C:\Users\orginal\source\repos\Header1.h(896,22): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'B.cpp')
+  
+C:\Users\orginal\source\repos\Header1.h(946,19): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'B.cpp')
+  
+C:\Users\orginal\source\repos\Header1.h(950,26): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'B.cpp')
+  
+C:\Users\orginal\source\repos\Header1.h(116,1): warning C4715: 'myLib::power': not all control paths return a value
+C:\Users\orginal\source\repos\Header1.h(713,1): warning C4715: 'myLib::Lower': not all control paths return a value
+C:\Users\orginal\source\repos\Header1.h(705,1): warning C4715: 'myLib::Upper': not all control paths return a value
+C:\Users\orginal\source\repos\Header1.h(766,1): warning C4715: 'myLib::Inverted': not all control paths return a value
+C:\Users\orginal\source\repos\B\B\B.cpp(114,1): warning C4715: 'GetByAccNum': not all control paths return a value
+  B.vcxproj -> C:\Users\orginal\source\repos\B\x64\Debug\B.exe
