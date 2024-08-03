@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+#include <vector>
 using namespace std;
 namespace DateLib{
 #define And &&
@@ -9,6 +9,24 @@ namespace DateLib{
     struct sDate { short Year; short Month; short Day; };
     struct sPeriod { sDate start; sDate end; };
     enum DateIs { Before = -1, After = 1, Equal = 0 };
+    vector<string> WordsOf(string S1, string seprator = " ") {
+        vector<string> vString; short pos = 0; string sWord;
+        // define a string variable 
+        // use find() function to get the position of the delimiters 
+        while ((pos = S1.find(seprator)) != std::string::npos)
+        {
+            sWord = S1.substr(0, pos); // store the word 
+            if (sWord != "")
+            {
+                vString.push_back(sWord);
+            }
+            S1.erase(0, pos + seprator.length());
+        }
+        if (S1 != "")
+        {
+            vString.push_back(S1); // it adds last word of the string. 
+        } return vString;
+    }
     bool isLeapYear(short Year) {
         return (Year % 4 == 0 && Year % 100 != 0) || (Year % 400 == 0);
     }
@@ -72,8 +90,43 @@ namespace DateLib{
         ans.Day = GetDay();
         ans.Month = GetMonth();
         ans.Year = GetYear();
+        if (ans.Day > numberOfDaysInMonth(ans.Month, ans.Year)) {
+            ans.Day = numberOfDaysInMonth(ans.Month, ans.Year);
+        }
         return ans;
     }
+    sDate CreateDate(string d) {
+        vector<string> words = WordsOf(d, "/");
+        sDate date;
+        date.Year = stoi(words.at(2));
+        date.Month = stoi(words.at(1));
+        date.Day = stoi(words.at(0));
+        return date;
+    }
+    string GetString() {
+        //cout << "Enter String: ";
+        string temp = "";
+        while (temp == "")getline(cin, temp);
+        //Alternative: getline(cin, temp);
+        return temp;
+    }
+    string ReadDateString() {
+        cout << "Enter Date string dd/mm/yyyy\n";
+        string date = GetString();
+        return date;
+    }
+    string dateToString(sDate date) {
+        string tmp;
+
+        tmp.append(to_string(date.Day) + '/');
+        
+        tmp.append(to_string(date.Month) + '/');
+        
+        tmp.append(to_string(date.Year));
+
+        return tmp;
+    }
+
     sPeriod ReadPeriod() {
         cout << "Enter Start Of Period\n";
         sDate start = CreateDate();
@@ -476,6 +529,7 @@ namespace DateLib{
         if (lastDay) {
             date.Day = numberOfDaysInMonth(date.Month , date.Year);
         }
+        return date;
     }
     sDate DecreaseXMonths(sDate date , int x) {
         for (int i = 0; i < x; i++) {
