@@ -8,9 +8,7 @@ int main()
 {
 	sDate date = CreateDate();
 	string strDate = dateToString(date);
-	printf("%s\n" , strDate.c_str());
-	sDate date2 = CreateDate(strDate);
-	cout << CompareDates(date, date2);
+	cout << FormatDate(date, "D:dd , M:mm , Y:yyyy");
 
 }
 

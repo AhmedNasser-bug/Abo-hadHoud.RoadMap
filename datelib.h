@@ -126,7 +126,21 @@ namespace DateLib{
 
         return tmp;
     }
+    string FormatDate(sDate date , string Format) {
+        short pos = Format.find("dd");
+        Format.erase(pos, 2);
+        Format.insert(pos, to_string(date.Day));
 
+        pos = Format.find("mm");
+        Format.erase(pos, 2);
+        Format.insert(pos ,to_string(date.Month));
+
+        pos = Format.find("yyyy");
+        Format.erase(pos, 4);
+        Format.insert(pos ,to_string(date.Year));
+
+        return Format;
+    }
     sPeriod ReadPeriod() {
         cout << "Enter Start Of Period\n";
         sDate start = CreateDate();
