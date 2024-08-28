@@ -11,21 +11,22 @@ C:\Users\orginal\source\repos\Header1.h(81,20): warning C4267: 'initializing': c
 C:\Users\orginal\source\repos\Header1.h(82,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'B.cpp')
   
-C:\Users\orginal\source\repos\Header1.h(659,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\orginal\source\repos\Header1.h(668,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'B.cpp')
   
-C:\Users\orginal\source\repos\Header1.h(896,22): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\orginal\source\repos\Header1.h(905,22): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'B.cpp')
   
-C:\Users\orginal\source\repos\Header1.h(946,19): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\orginal\source\repos\Header1.h(955,19): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'B.cpp')
   
-C:\Users\orginal\source\repos\Header1.h(950,26): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\orginal\source\repos\Header1.h(959,26): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'B.cpp')
   
 C:\Users\orginal\source\repos\Header1.h(116,1): warning C4715: 'myLib::power': not all control paths return a value
-C:\Users\orginal\source\repos\Header1.h(713,1): warning C4715: 'myLib::Lower': not all control paths return a value
-C:\Users\orginal\source\repos\Header1.h(705,1): warning C4715: 'myLib::Upper': not all control paths return a value
-C:\Users\orginal\source\repos\Header1.h(766,1): warning C4715: 'myLib::Inverted': not all control paths return a value
-C:\Users\orginal\source\repos\B\B\B.cpp(114,1): warning C4715: 'GetByAccNum': not all control paths return a value
-  B.vcxproj -> C:\Users\orginal\source\repos\B\x64\Debug\B.exe
+C:\Users\orginal\source\repos\Header1.h(714,1): warning C4715: 'myLib::Upper': not all control paths return a value
+C:\Users\orginal\source\repos\Header1.h(722,1): warning C4715: 'myLib::Lower': not all control paths return a value
+C:\Users\orginal\source\repos\Header1.h(775,1): warning C4715: 'myLib::Inverted': not all control paths return a value
+D:\WEB\Abo-hadHoud.RoadMap\B\B\B.cpp(155,1): warning C4715: 'GetByAccNum': not all control paths return a value
+  LINK : D:\WEB\Abo-hadHoud.RoadMap\B\x64\Debug\B.exe not found or not built by the last incremental link; performing full link
+  B.vcxproj -> D:\WEB\Abo-hadHoud.RoadMap\B\x64\Debug\B.exe

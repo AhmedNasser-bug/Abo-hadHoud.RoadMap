@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\WEB\\Abo-hadHoud.RoadMap\\B\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C19826AF-C1A5-44E9-924E-F38090623339}|B\\B.vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\B\\B\\B.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C19826AF-C1A5-44E9-924E-F38090623339}|B\\B.vcxproj|solutionrelative:B\\B.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "B.cpp",
+              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\B\\B\\B.cpp",
+              "RelativeDocumentMoniker": "B\\B.cpp",
+              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\B\\B\\B.cpp",
+              "RelativeToolTip": "B\\B.cpp",
+              "ViewState": "AQIAADYAAAAAAAAAAAAcwEoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-14T14:08:26.418Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

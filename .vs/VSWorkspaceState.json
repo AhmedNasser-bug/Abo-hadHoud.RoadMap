@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\B",
+    "\\B\\B"
   ],
-  "SelectedNode": "\\B",
+  "SelectedNode": "\\B\\B\\B.cpp",
   "PreviewInSolutionExplorer": false
 }
