@@ -254,6 +254,7 @@ namespace DateLib{
         }
         return days;
     }
+
     short DaysUntilWeekend(sDate date) {
         short potential = 6 - calculateDayIndex(date);
         if (potential == 6) {
@@ -267,12 +268,15 @@ namespace DateLib{
     short DaysUntilEndOfYear(sDate date) {
         return ((isLeapYear(date.Year) ? 366 : 365) - daysFomBeggin(date));
     }
+
     bool Date1BeforeDate2(sDate date1, sDate date2) {
         return daysFomBeggin(date1.Day, date1.Month, date1.Year) + date1.Year < daysFomBeggin(date2.Day, date2.Month, date2.Year) + date2.Year;
     }
     bool Date1AfterDate2(sDate date1, sDate date2) {
         return daysFomBeggin(date1.Day, date1.Month, date1.Year) + date1.Year > daysFomBeggin(date2.Day, date2.Month, date2.Year) + date2.Year;
     }
+
+
     bool Date1isEqualtoDate2(sDate date1, sDate date2) {
         return daysFomBeggin(date1.Day, date1.Month, date1.Year) + date1.Year == daysFomBeggin(date2.Day, date2.Month, date2.Year) + date2.Year;
     }
@@ -299,9 +303,6 @@ namespace DateLib{
     void CopyDateFromTo(sDate& date1, sDate& date2) {
         date2 = CreateDate(date1.Day, date1.Month, date1.Year);
     }
-   /* int daysfromBirthDay(sDate birthdate) {
-        return DaysDiff(birthdate, GetSystemDate());
-    }*/
     bool DateWithinPeriod(sDate date, sPeriod period) {
         return  not (Date1AfterDate2(date, period.end) or Date1BeforeDate2(date, period.start));
     }
@@ -330,6 +331,8 @@ namespace DateLib{
     int GetPeriodLength(sPeriod period) {
         return DaysDiff(period.start, period.end);
     }
+
+
     sDate dateAfterAdding(short Days, sDate Date) {// fix this
 
         short arrdays[] = { 31 , 28, 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 };
@@ -396,6 +399,8 @@ namespace DateLib{
             return Date;
         
     }
+
+
     void addOneday(sDate& date) {
         if (CheckLastMonth(date) And CheckLastDay(date)) {
             date.Day = 1;
@@ -498,6 +503,8 @@ namespace DateLib{
         date.Year += 1000;
         return date;
     }
+
+
     sDate DecreaseOneDay(sDate date) {
         if (date.Day == 1 and date.Month == 1) {
             date.Day = 31;
@@ -642,6 +649,8 @@ namespace DateLib{
         }
         return date;
     }
+
+
     int vacationDays(sDate start, sDate End) {
         int days = 0;
         while (start.Day != End.Day or start.Year != End.Year or End.Month != start.Month) {

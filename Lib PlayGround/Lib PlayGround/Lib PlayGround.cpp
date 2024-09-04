@@ -2,14 +2,12 @@
 //
 
 #include <iostream>
-#include "D:\WEB\Abo-hadHoud.RoadMap\datelib.h"
-using namespace DateLib;
+abstract cls{
+
+};
 int main()
 {
-	sDate date = CreateDate();
-	string strDate = dateToString(date);
-	cout << FormatDate(date, "D:dd , M:mm , Y:yyyy");
-
+	
 }
 
 
