@@ -245,8 +245,6 @@ namespace myLib {
 
         }
         return freq_array;
-
-
     }
     int GetIndex_str(char test, string testingOn) {
         for (int i = 0; i < testingOn.length(); i++) {
