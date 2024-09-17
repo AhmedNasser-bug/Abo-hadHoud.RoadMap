@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\WEB\\Abo-hadHoud.RoadMap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\WEB\\Abo-hadHoud.RoadMap\\Testing Play ground.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Testing Play ground.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\WEB\\Abo-hadHoud.RoadMap\\datelib.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:datelib.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\IputValidation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Bank (OOP)\\Bank (OOP)\\IputValidation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsMainScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Bank (OOP)\\Bank (OOP)\\clsMainScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,8 +21,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 227,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,28 +38,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "datelib.h",
-              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\datelib.h",
-              "RelativeDocumentMoniker": "datelib.h",
-              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\datelib.h",
-              "RelativeToolTip": "datelib.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-03T15:00:04.361Z",
+              "DocumentIndex": 0,
+              "Title": "Bank (OOP).cpp",
+              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp",
+              "RelativeDocumentMoniker": "Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp",
+              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp",
+              "RelativeToolTip": "Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-13T11:58:16.887Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Testing Play ground.cpp",
-              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Testing Play ground.cpp",
-              "RelativeDocumentMoniker": "Testing Play ground.cpp",
-              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Testing Play ground.cpp",
-              "RelativeToolTip": "Testing Play ground.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-03T14:58:58.663Z",
+              "DocumentIndex": 1,
+              "Title": "IputValidation.h",
+              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\IputValidation.h",
+              "RelativeDocumentMoniker": "Bank (OOP)\\Bank (OOP)\\IputValidation.h",
+              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\IputValidation.h",
+              "RelativeToolTip": "Bank (OOP)\\Bank (OOP)\\IputValidation.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-16T05:23:01.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsMainScreen.h",
+              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsMainScreen.h",
+              "RelativeDocumentMoniker": "Bank (OOP)\\Bank (OOP)\\clsMainScreen.h",
+              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsMainScreen.h",
+              "RelativeToolTip": "Bank (OOP)\\Bank (OOP)\\clsMainScreen.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-15T12:41:55.941Z",
               "EditorCaption": ""
             }
           ]

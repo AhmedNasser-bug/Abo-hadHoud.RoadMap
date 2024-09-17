@@ -1,0 +1,21 @@
+﻿  Bank (OOP).cpp
+D:\WEB\Abo-hadHoud.RoadMap\Bank (OOP)\Bank (OOP)\IputValidation.h(38,51): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+  (compiling source file 'Bank%20(OOP).cpp')
+  
+D:\WEB\Abo-hadHoud.RoadMap\Bank (OOP)\Bank (OOP)\IputValidation.h(38,41): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+  (compiling source file 'Bank%20(OOP).cpp')
+  
+D:\WEB\Abo-hadHoud.RoadMap\Bank (OOP)\Bank (OOP)\IputValidation.h(38,33): warning C4244: 'argument': conversion from '__int64' to 'long double', possible loss of data
+  (compiling source file 'Bank%20(OOP).cpp')
+  
+D:\WEB\Abo-hadHoud.RoadMap\Bank (OOP)\Bank (OOP)\clsAddClientScreen.h(41,30): warning C4244: 'initializing': conversion from 'long double' to 'float', possible loss of data
+  (compiling source file 'Bank%20(OOP).cpp')
+  
+D:\WEB\Abo-hadHoud.RoadMap\Bank (OOP)\Bank (OOP)\clsUpdateClientScreen.h(37,30): warning C4244: 'initializing': conversion from 'long double' to 'float', possible loss of data
+  (compiling source file 'Bank%20(OOP).cpp')
+  
+D:\WEB\Abo-hadHoud.RoadMap\Bank (OOP)\Bank (OOP)\MainScreen.h(22,22): warning C4244: 'initializing': conversion from '__int64' to 'short', possible loss of data
+  (compiling source file 'Bank%20(OOP).cpp')
+  
+D:\WEB\Abo-hadHoud.RoadMap\Bank (OOP)\Bank (OOP)\clsBankClient.h(305,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
+  Bank (OOP).vcxproj -> D:\WEB\Abo-hadHoud.RoadMap\Bank (OOP)\x64\Debug\Bank (OOP).exe

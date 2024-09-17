@@ -7,6 +7,7 @@
 #include <string>
 #include<map>
 #define Sep "/--/"
+
 using namespace std;
 
 struct stClient {
@@ -207,26 +208,13 @@ namespace myLib {
             cout << v[i] << "\n";
         }
     }
-    void PrintVector(vector<bool>& v) {
+    template <typename Generic>
+    void PrintVector(vector<Generic>& v) {
         for (int i = 0; i < v.size(); i++) {
             cout << v[i] << "\n";
         }
     }
-    void PrintVector(vector<string>& v) {
-        for (int i = 0; i < v.size(); i++) {
-            cout << v[i] << "\n";
-        }
-    }
-    void PrintVector(vector<char>& v) {
-        for (int i = 0; i < v.size(); i++) {
-            cout << v[i] << "\n";
-        }
-    }
-    void PrintVector(vector<float>& v) {
-        for (int i = 0; i < v.size(); i++) {
-            cout << v[i] << "\n";
-        }
-    }
+    
     int max(string list) {
         int  Max = int(list[0] - '0');
         for (int x = 0; x < list.size(); x++) {
@@ -538,24 +526,7 @@ namespace myLib {
 
 
     }
-    bool checkPerfect(int n) {
-        int sum = 0;
-        for (int i = 1; i < n; i++) {
-            if (n % i == 0) {
-                sum = sum + i;
-            }
-        }
-        if (n == sum) {
-            return true;
-        }
-
-        return false;
-    }
-    int* Pcast_I(void* p) { return static_cast<int*>(p); }
-    char* Pcast_C(void* p) { return static_cast<char*>(p); }
-    float* Pcast_F(void* p) { return static_cast<float*>(p); }
-    string* Pcast_S(void* p) { return static_cast<string*>(p); }
-    bool* Pcast_B(void* p) { return static_cast<bool*>(p); }
+    
     void printFileContent(string fileName) {
         fstream File;
         File.open(fileName, ios::in);
@@ -1000,18 +971,7 @@ namespace myLib {
         cin.ignore(1, '\n');
         return n;
     }
-    int GetRangedNum(int low, int high, string message = "") {
-        cout << message;
-        int n;
-        cin >> n;
-        while (n < low || n > high) {
-            cout << "Invalid Choice: ";
-            cin >> n;
-            cout << endl;
-        }
-        cin.ignore(1, '\n');
-        return n;
-    }
+    
     bool isLeapYear(short Year) {
         return (Year % 4 == 0 && Year % 100 != 0) || (Year % 400 == 0);
     }

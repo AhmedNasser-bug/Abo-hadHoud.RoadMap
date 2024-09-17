@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Person",
-    "\\Person\\Person"
+    "\\Bank (OOP)",
+    "\\Bank (OOP)\\Bank (OOP)\\Debug",
+    "\\Bank (OOP)\\Bank (OOP)\\Debug\\Bank (OOP).tlog"
   ],
-  "SelectedNode": "\\Person\\Person\\String.h",
+  "SelectedNode": "\\Bank (OOP)\\Bank (OOP).sln",
   "PreviewInSolutionExplorer": false
 }
