@@ -34,7 +34,7 @@ private:
 
         cout << "Enter Account Balance: ";
 
-        float AccountBalance = InputValidation::ReadDouble();
+        size_t AccountBalance = InputValidation::ReadPositiveInt();
         Client.SetAccountBalance(AccountBalance);
 
 

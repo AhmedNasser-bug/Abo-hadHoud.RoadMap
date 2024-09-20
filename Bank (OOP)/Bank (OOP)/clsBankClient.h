@@ -17,7 +17,7 @@ private:
     string _AccountNumber;
     string _PinCode;
     bool _MarkedForDelete = false;
-    float _AccountBalance;
+    int64_t _AccountBalance;
 
     static clsBankClient _ConvertLinetoClientObject(string Line, string Seperator = "#//#")
     {
@@ -25,7 +25,7 @@ private:
         vClientData = String::WordsOf(Line, Seperator);
 
         return clsBankClient(enMode::UpdateMode, vClientData[0], vClientData[1], vClientData[2],
-            vClientData[3], vClientData[4], vClientData[5], stof(vClientData[6]));
+            vClientData[3], vClientData[4], vClientData[5], stoll(vClientData[6]));
 
     }
 
@@ -104,11 +104,13 @@ private:
         vector <clsBankClient> _vClients;
         _vClients = _LoadClientsDataFromFile();
 
-        for (clsBankClient& C : _vClients)
+        for (size_t ClientIndex = 0; ClientIndex < _vClients.size(); ClientIndex++)
         {
-            if (C.AccountNumber() == AccountNumber())
+            
+            if (_vClients[ClientIndex].AccountNumber() == AccountNumber())
             {
-                C = *this;
+                _vClients[ClientIndex] = *this;
+
                 break;
             }
 
@@ -145,10 +147,9 @@ private:
 
 public:
 
-
     clsBankClient(enMode Mode, string FirstName, string LastName,
         string Email, string Phone, string AccountNumber, string PinCode,
-        float AccountBalance) :
+        int64_t AccountBalance) :
         clsPerson(FirstName, LastName, Email, Phone)
 
     {
@@ -158,6 +159,7 @@ public:
         _AccountBalance = AccountBalance;
 
     }
+
 
     bool IsEmpty()
     {
@@ -184,16 +186,32 @@ public:
     __declspec(property(get = GetPinCode, put = SetPinCode)) string PinCode;
 
 
-    void SetAccountBalance(float AccountBalance)
+    void SetAccountBalance(size_t AccountBalance)
     {
         _AccountBalance = AccountBalance;
     }
 
-    float GetAccountBalance()
+
+    inline void Deposit(int64_t Amount) {
+        _AccountBalance += Amount;
+
+         Save();
+
+    }
+
+
+    inline void Withdraw(int64_t Amount) {
+        _AccountBalance -= Amount;
+
+        Save();
+    }
+
+
+    int64_t GetAccountBalance()
     {
         return _AccountBalance;
     }
-    __declspec(property(get = GetAccountBalance, put = SetAccountBalance)) float AccountBalance;
+    __declspec(property(get = GetAccountBalance, put = SetAccountBalance)) int64_t AccountBalance;
 
 
     static clsBankClient Find(string AccountNumber)
@@ -252,20 +270,28 @@ public:
         return _GetEmptyClientObject();
     }
 
+
     bool Delete() {
+
         vector <clsBankClient> vClients = _LoadClientsDataFromFile();
+
         for (size_t ClientIndex = 0; ClientIndex < vClients.size(); ClientIndex++) {
+
             if (vClients[ClientIndex].AccountNumber() ==  _AccountNumber) {
+
                 vClients[ClientIndex]._MarkedForDelete = true;
+
+                _SaveCleintsDataToFile(vClients);
+
+                *this = _GetEmptyClientObject();
+
+                return true;
 
             }
         }
-
-        _SaveCleintsDataToFile(vClients);
-
-        *this = _GetEmptyClientObject();
         
-        return true;
+        return false;
+        
     }
         
 
@@ -302,6 +328,7 @@ public:
             break;
         }
 
+        return enSaveResults::svFaildEmptyObject;
     }
 
 
@@ -309,7 +336,9 @@ public:
     {
 
         clsBankClient Client1 = clsBankClient::Find(AccountNumber);
+
         return (!Client1.IsEmpty());
+    
     }
 
     
@@ -322,8 +351,9 @@ public:
         return _LoadClientsDataFromFile();
     }
 
-    static long double GetTotalBalances() {
-        long double Total = 0;
+
+    static int64_t GetTotalBalances() {
+        int64_t Total = 0;
         vector <clsBankClient> Clients = GetClientList();
         for (clsBankClient& Client : Clients) {
             Total += Client.AccountBalance;

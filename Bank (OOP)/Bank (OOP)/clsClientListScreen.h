@@ -8,12 +8,13 @@ class clsClientListScreen : protected clsScreen
 private:
     static inline void PrintClientRecordLine(clsBankClient& Client)
     {
-        printf("| %-15s", Client.AccountNumber().c_str());
-        printf("| %-20s", Client.FullName().c_str());
-        printf("| %-12s", Client.Phone().c_str());
-        printf("| %-20s", Client.Email().c_str());
-        printf("| %-10s", Client.PinCode.c_str());
-        printf("| %-12f", Client.AccountBalance);
+
+        cout << left << setw(15) << Client.AccountNumber();
+        cout << left << setw(20) << Client.FullName();
+        cout << left << setw(12) << Client.Phone();
+        cout << left << setw(20) << Client.Email();
+        cout << left << setw(10) << Client.PinCode;
+        cout << left << setw(12) << Client.AccountBalance;
 
     }
 public:

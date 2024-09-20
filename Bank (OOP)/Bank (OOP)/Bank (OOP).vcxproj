@@ -132,9 +132,15 @@
   <ItemGroup>
     <ClInclude Include="Bank (OOP).h" />
     <ClInclude Include="clsAddClientScreen.h" />
+    <ClInclude Include="clsBalancesList.h" />
     <ClInclude Include="clsClientListScreen.h" />
     <ClInclude Include="clsDeleteClientScreen.h" />
+    <ClInclude Include="clsDepositScreen.h" />
     <ClInclude Include="clsFindClientScreen.h" />
+    <ClInclude Include="clsManageUsersScreen.h" />
+    <ClInclude Include="clsTransactionsMenu.h" />
+    <ClInclude Include="clsUser.h" />
+    <ClInclude Include="clsWithdrawScreen.h" />
     <ClInclude Include="MainScreen.h" />
     <ClInclude Include="clsScreen.h" />
     <ClInclude Include="clsUpdateClientScreen.h" />

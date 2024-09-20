@@ -233,7 +233,7 @@ public:
 
      }
      // Print the given number in its text form
-     static void numToText(long long int num) {
+     static void numToText(int64_t num) {
          int length = CountnumLength(num);
 
 

@@ -32,17 +32,6 @@ private:
         return AccNum;
     }
 
-    static string _GetNewAccountNumber() {
-        cout << "Please enter Account Number: ";
-        string AccountNumber = InputValidation::ReadString();
-
-        while (clsBankClient::IsClientExist(AccountNumber)) {
-            cout << "Client ALREADY EXISTS , please enter another Account Number: ";
-            AccountNumber = InputValidation::ReadString();
-        }
-
-        return AccountNumber;
-    }
 
 public:
 

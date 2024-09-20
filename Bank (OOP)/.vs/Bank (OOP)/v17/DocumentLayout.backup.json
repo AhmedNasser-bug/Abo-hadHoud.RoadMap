@@ -7,24 +7,8 @@
       "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\Bank (OOP).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\MainScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\MainScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsDeleteClientScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\clsDeleteClientScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsUpdateClientScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\clsUpdateClientScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsFindClientScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\clsFindClientScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsAddClientScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\clsAddClientScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsManageUsersScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\clsManageUsersScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,36 +28,10 @@
               "RelativeDocumentMoniker": "Bank (OOP)\\Bank (OOP).cpp",
               "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp",
               "RelativeToolTip": "Bank (OOP)\\Bank (OOP).cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-16T06:42:23.054Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainScreen.h",
-              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\MainScreen.h",
-              "RelativeDocumentMoniker": "Bank (OOP)\\MainScreen.h",
-              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\MainScreen.h",
-              "RelativeToolTip": "Bank (OOP)\\MainScreen.h",
-              "ViewState": "AgIAACwAAAAAAAAAAAAAAJcAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-16T06:40:50.539Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "clsUpdateClientScreen.h",
-              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsUpdateClientScreen.h",
-              "RelativeDocumentMoniker": "Bank (OOP)\\clsUpdateClientScreen.h",
-              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsUpdateClientScreen.h",
-              "RelativeToolTip": "Bank (OOP)\\clsUpdateClientScreen.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-17T14:17:48.296Z",
               "EditorCaption": ""
             },
             {
@@ -90,41 +48,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "clsDeleteClientScreen.h",
-              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsDeleteClientScreen.h",
-              "RelativeDocumentMoniker": "Bank (OOP)\\clsDeleteClientScreen.h",
-              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsDeleteClientScreen.h",
-              "RelativeToolTip": "Bank (OOP)\\clsDeleteClientScreen.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAMwDMAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "clsManageUsersScreen.h",
+              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsManageUsersScreen.h",
+              "RelativeDocumentMoniker": "Bank (OOP)\\clsManageUsersScreen.h",
+              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsManageUsersScreen.h",
+              "RelativeToolTip": "Bank (OOP)\\clsManageUsersScreen.h",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-17T14:09:50.43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "clsFindClientScreen.h",
-              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsFindClientScreen.h",
-              "RelativeDocumentMoniker": "Bank (OOP)\\clsFindClientScreen.h",
-              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsFindClientScreen.h",
-              "RelativeToolTip": "Bank (OOP)\\clsFindClientScreen.h",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAMwCIAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-17T14:07:23.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "clsAddClientScreen.h",
-              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsAddClientScreen.h",
-              "RelativeDocumentMoniker": "Bank (OOP)\\clsAddClientScreen.h",
-              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsAddClientScreen.h",
-              "RelativeToolTip": "Bank (OOP)\\clsAddClientScreen.h",
-              "ViewState": "AgIAADYAAAAAAAAAAAAMwFoAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-17T14:06:46.278Z",
+              "WhenOpened": "2024-09-19T13:32:47.334Z",
               "EditorCaption": ""
             }
           ]

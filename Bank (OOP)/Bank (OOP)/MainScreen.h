@@ -6,11 +6,14 @@
 #include "clsDeleteClientScreen.h"
 #include "clsUpdateClientScreen.h"
 #include "clsFindClientScreen.h"
-#define cls system("cls");
+#include "clsTransactionsMenu.h"
+#include "clsManageUsersScreen.h"
+
 
 class clsMainScreen : protected clsScreen
 {
 private:    
+
     enum enMainMenueOptions {
         eListClients = 1, eAddNewClient = 2, eDeleteClient = 3,
         eUpdateClient = 4, eFindClient = 5, eShowTransactionsMenue = 6,
@@ -19,7 +22,7 @@ private:
 
     static short _ReadMainMenuOption() {
         cout << "Choose a number between 1 and 8...";
-        short Choice = InputValidation::ReadIntWithinRange(1, 8, "PLEASE choose a number between 1 and 8");
+        short Choice = InputValidation::ReadShortWithinRange(1, 8, "PLEASE choose a number between 1 and 8");
         return Choice;
     }
 
@@ -61,13 +64,14 @@ private:
 
     static void _ShowTransactionsMenue()
     {
-        cout << "\nTransactions Menue Will be here...\n";
-
+       
+        clsTransactionsMenu::ShowTransationsMenuScreen();
     }
 
     static void _ShowManageUsersMenue()
     {
-        cout << "\nUsers Menue Will be here...\n";
+        
+        clsManageUsersScreen::ShowManageUsersScreen();
 
     }
 
@@ -110,42 +114,6 @@ private:
         }
         _GoBackToMainMenu();
     }
-
-    inline void PrintBalanceRecordLine(clsBankClient& Client) {
-        printf("| %-15s", Client.AccountNumber().c_str());
-        printf("| %-20s", Client.FullName().c_str());
-        printf("| %-12f", Client.AccountBalance);
-    }
-
-    
-    // Displays a screen with all existing clients balances in the database
-    void ShowTotalBalances() {
-        cls
-        vector <clsBankClient> Clients = clsBankClient::GetClientList();
-        cout << "\n\t\t\t\t\tBalances List (" << Clients.size() << ") Client(s).";
-        cout << "\n_______________________________________________________";
-        cout << "_________________________________________\n" << endl;
-
-        cout << "| " << left << setw(15) << "Accout Number";
-        cout << "| " << left << setw(40) << "Client Name";
-        cout << "| " << left << setw(12) << "Balance";
-        cout << "\n_______________________________________________________";
-        cout << "_________________________________________\n" << endl;
-
-        long double TotalBalances = clsBankClient::GetTotalBalances();
-
-        for (clsBankClient& Client : Clients) {
-            PrintBalanceRecordLine(Client);
-            cout << endl;
-        }
-
-        long double TotalBalance = clsBankClient::GetTotalBalances();
-        cout << "\nTotal Balances: " << TotalBalance << endl;
-        Utils::numToText((lli)TotalBalance);
-
-        UIEnd();
-    }
-
 
 public:
 
