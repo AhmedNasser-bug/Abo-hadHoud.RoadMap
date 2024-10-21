@@ -22,7 +22,7 @@ public:
     static void ShowClientList() {
         vector<clsBankClient> Clients = clsBankClient::GetClientList();
 
-        PrintScreenTitle("Clients List", "Client List (" + to_string(Clients.size()) + ") Client(s).");
+        PrintScreenTitle("Clients List", "List Size: (" + to_string(Clients.size()) + ") Client(s).");
 
         cout << "\n_______________________________________________________";
         cout << "_________________________________________\n" << endl;
@@ -37,7 +37,7 @@ public:
 
         if (not Clients.size()) {
 
-            cout << "\t\t\t\t\tNo Clients For Now";
+            cout << "\t\t\t\t\tNo Clients For Now\n";
 
 
             return;

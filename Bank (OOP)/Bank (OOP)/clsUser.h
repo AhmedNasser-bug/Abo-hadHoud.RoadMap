@@ -19,19 +19,19 @@ private:
     enMode _Mode;
 
 
+    static clsUser _GetEmptyUser() {
+
+        return clsUser(EmptyMode, "", "", "", "", "", "", 0);
+
+    }
+
     static clsUser _ConvertLinetoUserObject(string Line, string Seperator = "#//#") {
         
         vector<string> vUserData;
         vUserData = String::WordsOf(Line, Seperator);
 
         return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2],
-            vUserData[3], vUserData[4], vUserData[5], stoi(vUserData[6]));
-
-    }
-
-    static clsUser _GetEmptyUser(){
-    
-        return clsUser(EmptyMode, "", "", "", "", "", "", 0);
+            vUserData[3], vUserData[4],/* String::Decrypted(*/vUserData[5], stoi(vUserData[6]));
 
     }
 
@@ -70,6 +70,7 @@ private:
             {
 
                 clsUser User = _ConvertLinetoUserObject(Line);
+                User.SetPassword(String::Decrypted(User.Password(), 5));
 
                 vUsers.push_back(User);
             }
@@ -86,14 +87,14 @@ private:
     {
 
         fstream MyFile;
-        MyFile.open("Clients.txt", ios::out);//overwrite
+        MyFile.open("Users.txt", ios::out);//overwrite
 
         string DataLine;
 
         if (MyFile.is_open())
         {
 
-            for (clsUser User : vUsers)
+            for (clsUser& User : vUsers)
             {
                 DataLine = _ConvertUserObjectToLine(User);
                 if (not User.MarkedForDeleted()) { MyFile << DataLine << endl; }
@@ -109,6 +110,7 @@ private:
     void _Update()
     {
         vector <clsUser> vUsers;
+        _Password = String::Encrypted(_Password, 5);
         vUsers = _LoadUsersDataFromFile();
 
         for (size_t UserIndex = 0; UserIndex < vUsers.size(); UserIndex++)
@@ -116,6 +118,7 @@ private:
 
             if (vUsers[UserIndex].UserName() == UserName())
             {
+
                 vUsers[UserIndex] = *this;
 
                 break;
@@ -143,12 +146,15 @@ private:
     }
 
     void _AddNew() {
-
+        clsUser This = *this;
+        _Password = String::Encrypted(Password(), 5);
         _AddDataLineToFile(_ConvertUserObjectToLine(*this));
-
+        _Password = String::Decrypted(Password(), 5);
     }
 
 public:
+
+    enum enPermisions { PermAll = -1, PermListClients = 1, PermAddClient = 2, PermDeleteClient = 4, PermUpdateClient = 8, PermFindClient = 16, PermTransactionList = 32, PermManageUsers = 64, PermShowLogs = 128 };
 
     clsUser(enMode Mode, string FirstName, string LastName, string Email, string Phone, string UserName, string Password, short Permissions):
     clsPerson(FirstName, LastName, Email, Phone)
@@ -206,10 +212,19 @@ public:
 
     }
 
-    short SetPermissions(short Permissions) {
+    void SetPermissions(short Permissions) {
 
         _Permissions = Permissions;
 
+    }
+
+    bool IsPermittedTo(short Action) {
+
+        if (Action == -1) {
+            return true;
+        }
+
+        return Permissions() & Action;
     }
 
     static bool IsUserExist(string UserName)
@@ -224,32 +239,20 @@ public:
     static clsUser Find(string UserName)
     {
 
-        fstream MyFile;
+        vector<clsUser> vUsers = _LoadUsersDataFromFile();
 
-        MyFile.open("Users.txt", ios::in);//read Mode
 
-        if (MyFile.is_open())
+        for (clsUser& User : vUsers)
         {
 
-            string Line;
-
-            while (getline(MyFile, Line))
+            if (User.UserName() == UserName)
             {
 
-                clsUser User = _ConvertLinetoUserObject(Line);
 
-                if (User.UserName() == UserName)
-                {
 
-                    MyFile.close();
-
-                    return User;
-
-                }
+                return User;
 
             }
-
-            MyFile.close();
 
         }
 
@@ -259,24 +262,15 @@ public:
     static clsUser Find(string UserName, string Password)
     {
 
-        fstream MyFile;
+        
+        vector<clsUser> vUsers = _LoadUsersDataFromFile();
+           
 
-        MyFile.open("Users.txt", ios::in);//read Mode
-
-        if (MyFile.is_open())
-        {
-
-            string Line;
-
-            while (getline(MyFile, Line))
+            for (clsUser &User: vUsers)
             {
-
-                clsUser User = _ConvertLinetoUserObject(Line);
 
                 if ( User.UserName() == UserName and User.Password() == Password )
                 {
-
-                    MyFile.close();
 
                     return User;
 
@@ -284,11 +278,7 @@ public:
 
             }
 
-            MyFile.close();
-
-        }
-
-        return _GetEmptyUser();
+       return _GetEmptyUser();
     }
 
     enum enSaveResults{ svFaildEmptyObject = 0, svSucceeded = 1, svFailedAlreadyExists };
@@ -347,6 +337,10 @@ public:
 
         return false;
 
+    }
+
+    static clsUser GetAddNewUserObject(string UserName) {
+        return clsUser(enMode::AddNew, "", "", "", "", UserName, "", 0);
     }
     
     static vector<clsUser> GetUsersList() {

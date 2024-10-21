@@ -1,4 +1,5 @@
 #pragma once
+
 #include "clsBankClient.h"
 #include "clsScreen.h"
 #include "clsClientListScreen.h"
@@ -8,6 +9,10 @@
 #include "clsFindClientScreen.h"
 #include "clsTransactionsMenu.h"
 #include "clsManageUsersScreen.h"
+#include "ShowLogsScreen.h"
+#include "clsLoginScreen.h"
+
+#include "GlobalUser.h"
 
 
 class clsMainScreen : protected clsScreen
@@ -17,12 +22,12 @@ private:
     enum enMainMenueOptions {
         eListClients = 1, eAddNewClient = 2, eDeleteClient = 3,
         eUpdateClient = 4, eFindClient = 5, eShowTransactionsMenue = 6,
-        eManageUsers = 7, eExit = 8
+        eManageUsers = 7, eShowLogs = 8, eCurrencyExchange = 9,  eExit = 10
     };
 
     static short _ReadMainMenuOption() {
-        cout << "Choose a number between 1 and 8...";
-        short Choice = InputValidation::ReadShortWithinRange(1, 8, "PLEASE choose a number between 1 and 8");
+        cout << "Choose a number between 1 and 9...";
+        short Choice = InputValidation::ReadShortWithinRange(1, 10, "PLEASE choose a number between 1 and 8");
         return Choice;
     }
 
@@ -75,9 +80,28 @@ private:
 
     }
 
-    static void _ShowEndScreen()
+    static void _ShowLogs() {
+        
+        ShowLogsScreen::ShowLogs();
+    }
+
+    static void _ShowCurrencyExchangeMenu() {
+
+        // call to currency exchange will be here
+
+    }
+    
+    static void _ShowErrorMessage() {
+        cls
+        cout << "NOT PERMITTED TO DO THIS ACTION" << endl;
+
+    }
+
+    static void _LogOut()
     {
-        PrintScreenTitle("THANKS FOR USING OUR SOFTWARE", "nah");
+        CurrentUser = clsUser::Find("", "");
+        
+       
 
     }
 
@@ -86,38 +110,64 @@ private:
         switch (Choice)
         {
         case clsMainScreen::eListClients:
-            _ShowAllClientsScreen();
+            if(CurrentUser.IsPermittedTo(eListClients))_ShowAllClientsScreen();
+            else {
+                _ShowErrorMessage();
+            }
             break;
         case clsMainScreen::eAddNewClient:
-            _ShowAddNewClientsScreen();
+            if (CurrentUser.IsPermittedTo(eAddNewClient))_ShowAddNewClientsScreen();
+            else {
+                _ShowErrorMessage();
+            }
             break;
         case clsMainScreen::eDeleteClient:
-            _ShowDeleteClientScreen();
+            if (CurrentUser.IsPermittedTo(eDeleteClient))_ShowDeleteClientScreen();
+            else {
+                _ShowErrorMessage();
+            }
             break;
         case clsMainScreen::eUpdateClient:
-            _ShowUpdateClientScreen();
+            if (CurrentUser.IsPermittedTo(eUpdateClient))_ShowUpdateClientScreen();
+            else {
+                _ShowErrorMessage();
+            }
             break;
         case clsMainScreen::eFindClient:
-            _ShowFindClientScreen();
+            if (CurrentUser.IsPermittedTo(eFindClient))_ShowFindClientScreen();
+            else {
+                _ShowErrorMessage();
+            }
             break;
         case clsMainScreen::eShowTransactionsMenue:
-            _ShowTransactionsMenue();
+            if (CurrentUser.IsPermittedTo(eShowTransactionsMenue))_ShowTransactionsMenue();
+            else {
+                _ShowErrorMessage();
+            }
             break;
         case clsMainScreen::eManageUsers:
-            _ShowManageUsersMenue();
+            if (CurrentUser.IsPermittedTo(eManageUsers))_ShowManageUsersMenue();
+            else {
+                _ShowErrorMessage();
+            }
+            break;
+        case clsMainScreen::eShowLogs:
+            if (CurrentUser.IsPermittedTo(eShowLogs))_ShowLogs();
+            else {
+                _ShowErrorMessage();
+            }
             break;
         case clsMainScreen::eExit:
-            _ShowEndScreen();
+            _LogOut();
             return;
         default:
             break;
         }
+
         _GoBackToMainMenu();
     }
 
 public:
-
-    
 
     static void ShowMainMenu() {
         cls
@@ -129,10 +179,13 @@ public:
         cout << "" << "[5] Find Client.\n";
         cout << "" << "[6] Transactions.\n";
         cout << "" << "[7] Manage Users.\n";
-        cout << "" << "[8] Logout.\n";
+        cout << "" << "[8] Show Logs.\n";
+        cout << "" << "[9] Currency Exchange.\n";
+        cout << "" << "[10] Logout.\n";
         cout << "" << "===========================================\n";
         _PerforMainMenuOption((enMainMenueOptions)_ReadMainMenuOption());
 
    }
+
 };
 

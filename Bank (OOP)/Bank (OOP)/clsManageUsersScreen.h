@@ -1,5 +1,11 @@
 #pragma once
 #include "clsScreen.h"
+#include "clsUsersListScreen.h"
+#include "clsAddUserScreen.h"
+#include "clsDeleteUserScreen.h"
+#include "clsUpdateUserScreen.h"
+#include "clsFindUserScreen.h"
+
 class clsManageUsersScreen :
     protected clsScreen
 {
@@ -9,25 +15,35 @@ private:
 
     static void _ShowUsersListScreen() {
 
+        clsUsersListScreen::ShowUsersListScreen();
+
     }
 
 
     static void _ShowAddUsersScreen() {
+
+        clsAddUserScreen::ShowAddNewUserScreen();
 
     }
 
    
     static void _ShowDeleteUsersScreen() {
 
+        clsDeleteUserScreen::ShowDeleteUserScreen();
+
     }
 
 
     static void _ShowUpdateUsersScreen() {
 
+        clsUpdateUserScreen::ShowUpdateUserScreen();
+    
     }
 
 
     static void _ShowFindUsersScreen() {
+
+        clsFindUserScreen::ShowFindUserScreen();
 
     }
 
@@ -101,7 +117,9 @@ private:
     }
 public:
     static void ShowManageUsersScreen() {
-        
+
+        cls
+
         PrintScreenTitle("Manage Users Menu");
 
         cout << "[1] Show users list" << endl;

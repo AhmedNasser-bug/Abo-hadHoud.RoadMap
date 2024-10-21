@@ -3,11 +3,13 @@
 #include "clsDepositScreen.h"
 #include "clsWithdrawScreen.h"
 #include "clsBalancesList.h"
+#include "clsTransferScreen.h"
+#include "clsTransactionLogsScreen.h"
 
 class clsTransactionsMenu : clsScreen
 {
 private:
-    enum enTransactionsMenuOptions { eDeposit = 1, eWithdraw = 2, eShowBalances = 3, eBackToMainScreen = 4 };
+    enum enTransactionsMenuOptions { eDeposit = 1, eWithdraw = 2, eShowBalances = 3, eTransfer = 4, eTransferLogs = 5, eBackToMainScreen = 6 };
 
 
     static inline void _ShowDepositScreen() {
@@ -26,11 +28,22 @@ private:
 
         clsBalancesList::ShowTotalBalances();
     }
+
+    static inline void _ShowTransferScreen() {
+
+        clsTransferScreen::ShowTransferScreen();
+
+    }
+
+    static inline void _ShowTransactionLogsScreen() {
+
+        clsTransactionLogs::ShowTransactionLogsScreen();
+
+    }
    
     static inline void _GetBackToTransactionsMenu() {
 
         UIEnd();
-
         ShowTransationsMenuScreen();
 
     }
@@ -38,7 +51,7 @@ private:
     static inline short _GetTransationsMenuOption() {
         cout << "Please choose an Option: ";
 
-        short Choice = InputValidation::ReadShortWithinRange(1, 4, "Please choose a number from 1 to 4");
+        short Choice = InputValidation::ReadShortWithinRange(1, 5, "Please choose a number from 1 to 4");
 
         return Choice;
     }
@@ -66,7 +79,18 @@ private:
             _ShowAllBalancesScreen();
             
             break;
-        
+        case clsTransactionsMenu::eTransfer:
+
+            _ShowTransferScreen();
+
+            break;
+
+        case clsTransactionsMenu::eTransferLogs:
+
+            _ShowTransactionLogsScreen();
+
+            break;
+
         case clsTransactionsMenu::eBackToMainScreen:
         
             return;
@@ -91,7 +115,8 @@ public:
         cout << "[1] Deposit" << endl;
         cout << "[2] Withdraw" << endl;
         cout << "[3] Show All balances" << endl;
-        cout << "[4] Back To main menu" << endl;
+        cout << "[4] Show Transfer Screen" << endl;
+        cout << "[5] Back To main menu" << endl;
 
         
         _PerformTransactionScreenOption(enTransactionsMenuOptions(_GetTransationsMenuOption()));

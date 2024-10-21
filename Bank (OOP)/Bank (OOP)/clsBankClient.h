@@ -7,9 +7,20 @@
 #include <vector>
 #include <fstream>
 
+
 using namespace std;
 class clsBankClient : public clsPerson
 {
+public:
+    struct stTransactionLog {
+        string Date;
+        string SenderAccNum;
+        string RecieverAccNum;
+        string Amount;
+        string SenderBalance;
+        string RecieverBalance;
+        string CurrentUserName;
+    };
 private:
 
     enum enMode { EmptyMode = 0, UpdateMode = 1, AddNew = 2 };
@@ -124,10 +135,10 @@ private:
         _AddDataLineToFile(_ConverClientObjectToLine(*this));
     }
 
-    void _AddDataLineToFile(string  stDataLine)
+    void _AddDataLineToFile(string  stDataLine, string FileDir = "Clients.txt")
     {
         fstream MyFile;
-        MyFile.open("Clients.txt", ios::out | ios::app);
+        MyFile.open(FileDir, ios::out | ios::app);
 
         if (MyFile.is_open())
         {
@@ -144,8 +155,39 @@ private:
         return clsBankClient(enMode::EmptyMode, "", "", "", "", "", "", 0);
     }
 
+    static string _GetTransactionLog(clsBankClient Sender, clsBankClient Reciever, size_t Amount, string CurrentUserName, string Seperator = "#//#") {
+
+        string TransferLogRecord = "";
+        Date CurrentDate;
+        TransferLogRecord += CurrentDate.GetStringDate("dd/mm/yyyy") + "-" + CurrentDate.GetStringTime("hh:mm:ss") + Seperator;
+        TransferLogRecord += Sender.AccountNumber() + Seperator;
+        TransferLogRecord += Reciever.AccountNumber() + Seperator;
+        TransferLogRecord += to_string(Amount) + Seperator;
+        TransferLogRecord += to_string(Sender.AccountBalance) + Seperator;
+        TransferLogRecord += to_string(Reciever.AccountBalance) + Seperator;
+        TransferLogRecord += CurrentUserName;
+        return TransferLogRecord;
+
+    }
+
+    static stTransactionLog _LineToTransactionLog(string Line) {
+        vector<string> TransactionData = String::WordsOf(Line, "#//#");
+
+        stTransactionLog TransactionLog;
+
+        TransactionLog.Date = TransactionData[0];
+        TransactionLog.SenderAccNum = TransactionData[1];
+        TransactionLog.RecieverAccNum = TransactionData[2];
+        TransactionLog.Amount = TransactionData[3];
+        TransactionLog.SenderBalance = TransactionData[4];
+        TransactionLog.RecieverBalance = TransactionData[5];
+        TransactionLog.CurrentUserName = TransactionData[6];
+
+        return TransactionLog;
+    }
 
 public:
+
 
     clsBankClient(enMode Mode, string FirstName, string LastName,
         string Email, string Phone, string AccountNumber, string PinCode,
@@ -204,6 +246,16 @@ public:
         _AccountBalance -= Amount;
 
         Save();
+    }
+
+
+    inline void Transfer(size_t Amount, clsBankClient& TransferTo, string CurrentUserName) {
+        Withdraw(Amount);
+
+        TransferTo.Deposit(Amount);
+
+        // Add transaction log to file
+        _AddDataLineToFile(_GetTransactionLog(*this, TransferTo, Amount, CurrentUserName), "TransactionLogs.txt");
     }
 
 
@@ -360,6 +412,28 @@ public:
         }
         
         return Total;
+    }
+
+
+    static vector<stTransactionLog> LoadTransferLogsFromFile() {
+
+        vector <stTransactionLog> vLogs;
+        fstream MyFile;
+        MyFile.open("TransactionLogs.txt", ios::in);//read Mode
+
+        if (MyFile.is_open())
+        {
+            string Line;
+
+            while (getline(MyFile, Line))
+            {
+                vLogs.push_back(_LineToTransactionLog(Line));
+            }
+            MyFile.close();
+
+        }
+
+        return vLogs;
     }
 
 };

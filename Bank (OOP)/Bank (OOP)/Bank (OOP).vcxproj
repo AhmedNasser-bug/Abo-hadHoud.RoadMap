@@ -132,21 +132,38 @@
   <ItemGroup>
     <ClInclude Include="Bank (OOP).h" />
     <ClInclude Include="clsAddClientScreen.h" />
+    <ClInclude Include="clsAddUserScreen.h" />
     <ClInclude Include="clsBalancesList.h" />
     <ClInclude Include="clsClientListScreen.h" />
+    <ClInclude Include="clsCurrency.h" />
+    <ClInclude Include="clsCurrencyExchangeMenu.h" />
     <ClInclude Include="clsDeleteClientScreen.h" />
+    <ClInclude Include="clsDeleteUserScreen.h" />
     <ClInclude Include="clsDepositScreen.h" />
     <ClInclude Include="clsFindClientScreen.h" />
+    <ClInclude Include="clsFindCurrencyScreen.h" />
+    <ClInclude Include="clsFindUserScreen.h" />
+    <ClInclude Include="clsListCurrenciesScreen.h" />
+    <ClInclude Include="clsLoginScreen.h" />
     <ClInclude Include="clsManageUsersScreen.h" />
+    <ClInclude Include="clsTransactionLogsScreen.h" />
     <ClInclude Include="clsTransactionsMenu.h" />
+    <ClInclude Include="clsTransferScreen.h" />
+    <ClInclude Include="clsUpdateUserScreen.h" />
     <ClInclude Include="clsUser.h" />
+    <ClInclude Include="clsUsersListScreen.h" />
     <ClInclude Include="clsWithdrawScreen.h" />
+    <ClInclude Include="GlobalUser.h" />
     <ClInclude Include="MainScreen.h" />
     <ClInclude Include="clsScreen.h" />
     <ClInclude Include="clsUpdateClientScreen.h" />
+    <ClInclude Include="ShowLogsScreen.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\Debug\Clients.txt" />
+    <Text Include="Clients.txt" />
+    <Text Include="LogFile.txt" />
+    <Text Include="TransactionLogs.txt" />
+    <Text Include="Users.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iomanip>
 
 #define Sep "/--/"
 #define ClientsPath "D:\\WEB\\Abo-hadHoud.RoadMap\\B\\B\\Clients.txt"
@@ -34,7 +35,7 @@ inline void AdminError() {
 
 // Prints user details as a row in a table
 void PrintUser(stUser User){
-
+    
     printf("| %-15s", User.Name.c_str());
     printf("| %-10s", User.Password.c_str());
     printf("| %-40d\n", User.perms);

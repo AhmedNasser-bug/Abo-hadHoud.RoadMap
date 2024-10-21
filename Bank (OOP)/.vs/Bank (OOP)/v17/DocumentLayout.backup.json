@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\Bank (OOP).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsCurrencyExchangeMenu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\clsCurrencyExchangeMenu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsManageUsersScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\clsManageUsersScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsListCurrenciesScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\clsListCurrenciesScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{087797FF-9745-44A9-9D0E-F0FDF7E22E31}|Bank (OOP)\\Bank (OOP).vcxproj|solutionrelative:Bank (OOP)\\Bank (OOP).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,22 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 227,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Bank (OOP).cpp",
-              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp",
-              "RelativeDocumentMoniker": "Bank (OOP)\\Bank (OOP).cpp",
-              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp",
-              "RelativeToolTip": "Bank (OOP)\\Bank (OOP).cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-16T06:42:23.054Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
@@ -49,15 +39,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "clsManageUsersScreen.h",
-              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsManageUsersScreen.h",
-              "RelativeDocumentMoniker": "Bank (OOP)\\clsManageUsersScreen.h",
-              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsManageUsersScreen.h",
-              "RelativeToolTip": "Bank (OOP)\\clsManageUsersScreen.h",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "Title": "clsListCurrenciesScreen.h",
+              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsListCurrenciesScreen.h",
+              "RelativeDocumentMoniker": "Bank (OOP)\\clsListCurrenciesScreen.h",
+              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsListCurrenciesScreen.h",
+              "RelativeToolTip": "Bank (OOP)\\clsListCurrenciesScreen.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-19T13:32:47.334Z",
+              "WhenOpened": "2024-10-11T16:39:15.807Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsCurrencyExchangeMenu.h",
+              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsCurrencyExchangeMenu.h",
+              "RelativeDocumentMoniker": "Bank (OOP)\\clsCurrencyExchangeMenu.h",
+              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\clsCurrencyExchangeMenu.h",
+              "RelativeToolTip": "Bank (OOP)\\clsCurrencyExchangeMenu.h",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAD8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-11T16:24:37.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Bank (OOP).cpp",
+              "DocumentMoniker": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp",
+              "RelativeDocumentMoniker": "Bank (OOP)\\Bank (OOP).cpp",
+              "ToolTip": "D:\\WEB\\Abo-hadHoud.RoadMap\\Bank (OOP)\\Bank (OOP)\\Bank (OOP).cpp",
+              "RelativeToolTip": "Bank (OOP)\\Bank (OOP).cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-11T06:50:28.691Z"
             }
           ]
         }

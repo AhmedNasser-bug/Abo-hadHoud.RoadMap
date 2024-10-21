@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <cstring>
+#include <iostream>
 using namespace std;
 class String 
 {
@@ -517,12 +518,39 @@ public:
 
 	friend ostream& operator<<(std::ostream& out, const String& str);
 
-	static inline string MultiplyString(string String, int Multiple) {
+	// Returns the given string multiplied by x
+	static inline string MultiplyString(string String, size_t Multiple) {
 		string Self = String;
 		while (Multiple--) {
 			String += Self;
 		}
 		return String;
+	}
+
+	// modifies the string using caesar cipher 
+	static inline string Encrypted(string Word, short Key) {
+		// modify the string
+		for (size_t index = 0; index < Word.size(); index++) {
+			Word[index] = char(int(Word[index]) + Key);
+		}
+
+		return Word;
+	}
+	inline void Encrypted(short key) {
+		_val = Encrypted(_val, key);
+	}
+
+	// modify the string using caesar cipher
+	static inline string Decrypted(string Word, short Key) {
+		// modify the string
+		for (size_t index = 0; index < Word.size(); index++) {
+			Word[index] = char(int(Word[index]) - Key);
+		}
+
+		return Word;
+	}
+	inline void Decrypt(short key) {
+		_val = Decrypted(_val, key);;
 	}
 };
 ostream & operator<<(std::ostream & out, const String & str)

@@ -39,8 +39,6 @@ public:
 
         PrintScreenTitle("Find Client Screen");
 
-        cout << "Enter Account Number: ";
-
         string AccountNumber = _GetExistingAccountNumber();
 
         clsBankClient Client = clsBankClient::Find(AccountNumber);

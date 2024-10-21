@@ -33,6 +33,9 @@ public:
     short Day = 1;
     short Month = 1;
     short Year = 1900;
+    short Hour = 0;
+    short Minute = 0;
+    short Second = 0;
 
 	Date() {
 
@@ -40,8 +43,12 @@ public:
 		tm* t = localtime(&now);
 		Year = (short)(1900 + t->tm_year);
 		Month = (short)(t->tm_mon + 1);
-		Day = (short)(t->tm_wday);
-       
+		Day = (short)(t->tm_mday);
+        Hour = (short)(t->tm_hour);
+        Minute = (short)(t->tm_min);
+        Second = (short)(t->tm_sec);
+
+        
 	}
     Date(short Year  , short Month, short Day) {
         Day = Day;
@@ -77,6 +84,26 @@ public:
     }
     string GetStringDate(string Format) {
         return GetStringDate(*this, Format);
+    }
+
+
+    static string GetStringTime(Date date, string Format = "hh:mm:ss") {
+        size_t pos = Format.find("hh");
+        Format.erase(pos, 2);
+        Format.insert(pos, to_string(date.Hour));
+
+        pos = Format.find("mm");
+        Format.erase(pos, 2);
+        Format.insert(pos, to_string(date.Minute));
+
+        pos = Format.find("ss");
+        Format.erase(pos, 4);
+        Format.insert(pos, to_string(date.Second));
+
+        return Format;
+    }
+    string GetStringTime(string Format = "hh:mm:ss") {
+        return GetStringTime(*this, Format);
     }
 
 

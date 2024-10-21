@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\B",
     "\\Bank (OOP)",
-    "\\Bank (OOP)\\Bank (OOP)",
-    "\\B\\B"
+    "\\Bank (OOP)\\Bank (OOP)"
   ],
-  "SelectedNode": "\\Bank (OOP)\\Bank (OOP)\\clsBankClient.h",
+  "SelectedNode": "\\Bank (OOP)\\Bank (OOP).sln",
   "PreviewInSolutionExplorer": false
 }
